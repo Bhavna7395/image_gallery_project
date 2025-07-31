@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/magnific-popup.min.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Gallery</h1>
+        <nav class="filter">
+            <ul class="controls">
+                <li class="buttons active" data-filter="all">All</li>
+                 <li class="buttons" data-filter="mountains">mountains</li>
+                <li class="buttons" data-filter="Animals">Animals</li>
+                <li class="buttons" data-filter="chocolate">chocolate</li>
+                <li class="buttons" data-filter="ice-cream">ice cream</li>
+                <li class="buttons" data-filter="flowers">flowers</li>
+               
+            </ul>
+        </nav>
+
+        <div class="photos">
+            <a href="IMG/img1.JPEG" class="  image all"><img src="IMG/img1.JPEG"> </a>
+            <a href="IMG/img2.JPEG" class=" image all "><img src="IMG/img2.JPEG"></a>
+            <a href="IMG/img3.JPEG" class=" image Animals"><img src="IMG/img3.JPEG"></a>
+            <a href="IMG/img4.JPEG" class=" image Animals"><img src="IMG/img4.JPEG"></a>
+            <a href="IMG/img5.JPEG" class="image mountains"> <img src="IMG/img5.JPEG"></a>
+            <a href="IMG/img6.JPEG" class=" image Animals"> <img src="IMG/img6.JPEG"></a>
+            <a href="IMG/img7.JPEG" class=" image all"><img src="IMG/img7.JPEG"></a>
+            <a href="IMG/img8.JPEG" class=" image Animals"><img src="IMG/img8.JPEG"></a>
+            <a href="IMG/img9.JPEG" class=" image mountains"><img src="IMG/img9.JPEG"></a>
+            <a href="IMG/img10.JPEG" class="image all"><img src="IMG/img10.JPEG"></a>
+            <a href="IMG/img11.JPEG" class=" image mountains"><img src="IMG/img11.JPEG"></a>
+            <a href="IMG/img1.JPEG" class="image all"><img src="IMG/img1.JPEG"></a>
+            <a href="IMG/mountain2.JPEG" class="image mountains"> <img src="IMG/mountain2.JPEG"></a>
+            <a href="IMG/mountain3.JPEG" class="image mountains"> <img src="IMG/mountain3.JPEG"></a>
+            <a href="IMG/mountain4.JPEG" class="image mountains"> <img src="IMG/mountain4.JPEG"></a>
+            <a href="IMG/mountain1.JPEG" class="image mountains"> <img src="IMG/mountain1.JPEG"></a>
+            <a href="IMG/ice5.JPEG" class="image ice-cream"><img src="IMG/ice5.JPEG"></a>
+             <a href="IMG/ice6.JPEG" class="image ice-cream"><img src="IMG/ice6.JPEG"></a>
+
+            <a href="IMG/animal1.JPEG" class="image Animals"> <img src="IMG/animal1.JPEG"> </a>
+            <a href="IMG/animal2.JPEG" class="image Animals"> <img src="IMG/animal2.JPEG"> </a>
+            <a href="IMG/animal3.JPEG" class="image Animals"> <img src="IMG/animal3.JPEG"> </a>
+            <a href="IMG/animal4.JPEG" class="image Animals"> <img src="IMG/animal4.JPEG"> </a>
+            <a href="IMG/animal5.JPEG" class="image Animals"> <img src="IMG/animal5.JPEG"> </a>
+            <a href="IMG/chocolate1.JPEG" class="image chocolate"> <img src="IMG/chocolate1.JPEG"> </a>
+            <a href="IMG/chocolate2.JPEG" class="image chocolate"> <img src="IMG/chocolate2.JPEG"> </a>
+            <a href="IMG/chocolate3.JPEG" class="image chocolate"> <img src="IMG/chocolate3.JPEG"> </a>
+            <a href="IMG/flower1.JPEG" class="image flowers"> <img src="IMG/flower1.JPEG"> </a>
+            <a href="IMG/flower2.JPEG" class="image flowers"> <img src="IMG/flower2.JPEG"> </a>
+            <a href="IMG/flower3.JPEG" class="image flowers"> <img src="IMG/flower3.JPEG"> </a>
+            <a href="IMG/flower4.JPEG" class="image flowers"> <img src="IMG/flower4.JPEG"> </a>
+            <a href="IMG/flower5.JPEG" class="image flowers"> <img src="IMG/flower5.JPEG"> </a>
+            <a href="IMG/ice1.JPEG" class="image ice-cream"> <img src="IMG/ice1.JPEG"> </a>
+            <a href="IMG/ice2.JPEG" class="image ice-cream"> <img src="IMG/ice2.JPEG"> </a>
+            <a href="IMG/ice3.JPEG" class="image ice-cream"> <img src="IMG/ice3.JPEG"> </a>
+            <a href="IMG/ice4.JPEG" class="image ice-cream"> <img src="IMG/ice4.JPEG"> </a>
+        </div>
+
+    </div>
+
+    <footer>
+       
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.mqgnific-popup.min.js"></script>
+
+    <script>
+         lightGallery(document.querySelector('.photos'))
+
+        $(document).ready(function () {
+            $('.buttons').click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                var filter = $(this).attr('data-filter')
+                if (filter == 'all') {
+                    $('.image').show(400);
+
+                } else {
+                    $('.image').not('.' + filter).hide(200);
+                    $('.image').filter('.' + filter).show(400);
+                }
+            });
+        });
+
+            
+    </script>
+</body>
+
+</html>
